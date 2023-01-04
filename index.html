@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NATOURS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+
+<style>
+body {
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x:scroll;
+    background-color: #F0F0F0;
+    
+}
+    
+ h1{
+    margin:0;
+    }
+    
+.img_logo{
+        
+        width: 100%;
+        aspect-ratio:7/2;
+        object-fit: contain;
+        display: block;
+        height:8vh;
+        
+    }    
+
+    
+
+.topnav {
+  position: relative;  
+  overflow: hidden;
+  
+  border-radius: 10px;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  padding-bottom: 3px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-right:25px;
+  margin-top:5px;
+  transition-duration: 0.4s;
+}
+
+.topnav a:not(:first-child){
+        float:right;
+    }
+
+.topnav a:hover {
+ /* background-color: rgba(0,0,0,0.5); */
+  color: black;
+  border-bottom: 2px solid orange;
+}
+
+.topnav a:active {
+ color: white;
+ border-bottom: 5px solid orange; 
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {background-color:#333    ;position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+    
+.hero_main{
+    position: relative;
+    width: 100%;
+        background-image: linear-gradient(to top right,rgba(0,0,0,0.8),rgba(0,0,0,0.5)),url(https://archive.org/download/11PhotoByGabrielGarciaMarengoOnUnsplash/11%20Photo%20by%20Gabriel%20Garcia%20Marengo%20on%20Unsplash.jpg);
+        background-size: cover;
+        background-position: center;
+        height:120vh;
+        -webkit-clip-path:polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+    
+ .hero-text-box{
+        position: absolute;
+        width:1140px;
+        top:50%;
+        left: 50%;
+        transform:translate(-50%,-50%);
+        font-weight: 300;
+        color:white;
+        font-weight:300;
+        font-size:40px;
+}
+    
+ @media screen and (max-width: 1140px) {
+  .hero-text-box{
+    width: 100px;
+    font-size: 25px;
+  }
+  }
+
+@media screen and (max-width: 600px) {
+  .hero-text-box{
+    margin-left:15px;  
+    width: 100%;
+    font-size: 20px;
+  }
+    .btn{
+        
+        display: block;
+        margin-top: 20px;
+        
+        }
+    .btn-take{
+        width:18vw;
+        }
+     .btn-more{
+        width:30vw;
+      
+        }
+    }
+    
+.btn{
+        text-decoration: none;
+        font-size:20px;
+        border-radius: 20px;
+/*        background-color: aqua;*/
+        padding:8px 15px;
+       transition-duration:0.3s;
+}
+    
+    .btn-take{
+        color:white;
+        background-color: #bb7900;
+        border:1px solid #bb7900;
+       
+}
+    
+    .btn-take:hover{
+        background-color: #996300;
+         border:1px solid #996300;
+        }
+    
+    
+    .btn-more{
+         border:1px solid #bb7900;
+         color:white;
+}
+    
+    .btn-more:hover{
+        background-color:#bb7900;
+        color:white;
+    }
+    
+    .section_globe{
+/*        background-color: red;*/
+        height:75vh;
+        position:relative;
+        width:85%;
+        margin:1px 7.5% 1px 7.5%;
+        
+    }
+    
+    .col_1_of_2{
+        box-sizing: border-box;
+        width:50%;
+        padding-left:20px;
+        float:left;
+    }
+    
+    
+    .main_head{
+        margin:40px 0px;
+        margin-bottom: 70px;
+    }
+    
+    .globe_head{
+        text-align:center;
+        font-size: 30px;
+        background-image: linear-gradient(to right,#16A085,#F4D03F);
+        -webkit-background-clip:text;
+        color:transparent;
+         
+    }
+    
+    .sub_head{
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+    
+    .composition{
+       /* background-color: white;*/
+        position: relative;
+       
+        
+    }
+    
+    .composition_photo{
+        position: absolute;
+        width:53%;
+        z-index:10;
+        box-shadow:0 15px 40px rgba(0,0,0,0.4);
+        border-radius:3px;
+        opacity:1;
+        outline-offset:20px;
+        transition-duration:0.4s;
+/*        outline-color: aqua;*/
+/*        outline:15px solid black;*/
+    }
+        
+
+    .composition_photo_1{
+        left:0;
+        top:-20px;
+        
+        
+    }
+    
+    .composition_photo_2{
+        right:0;
+        top:20px;
+        
+    }
+    
+    .composition_photo_3{
+        left:20%;
+        top:100px;
+    }
+    
+    .composition_photo:hover{
+        transform:scale(1.05) translateY(-5px);
+        box-shadow:0 25px 40px rgba(0,0,0,0.5);
+        z-index:20;
+        outline:15px solid #16A085;
+    }
+    
+    
+    .composition:hover
+    .composition_photo:not(:hover){
+        transform: scale(0.95);
+        opacity:0;
+        
+    }
+    
+    .left_para{
+        width:85%;
+        color:#575656;
+        text-align:left;
+    }
+    
+    .btn-anchor{
+        background-color: orange;
+        color: white;
+    }
+    
+    @media screen and (max-width:600px) {
+        .composition_photo{
+            position:relative;
+            width:100%;
+        }
+        .composition_photo_3{
+            left:0;
+            top:60px;
+        }
+    }
+
+    .section_features{
+        position: relative;
+        background-image:linear-gradient(to right bottom,rgba(182,213,111,0.8),rgba(40,180,133,0.8)),url(vendores/images/h.jpg);
+        background-position: center;
+        background-size: cover;
+        height:100vh;
+        width:100vw;
+        -webkit-clip-path:polygon(0 20%,100% 0, 100% 80%, 0 100%);
+}
+    
+    .inner_fea{
+        width:90%;
+        position: absolute;
+        margin-top:180px;
+        margin-left:5%;
+    }
+    
+    .grid-container{
+        display:grid;
+        grid-gap:50px 100px;
+        grid-template-columns: auto auto auto auto;
+        padding:10px;
+    }
+    
+    .grid-item{
+        box-sizing: border-box;
+        background-color: rgba(255,255,255,0.7);
+        height:50vh;
+        width:90%;
+        border-radius: 5px;
+        padding:20px;
+        text-align: center;
+        color:#575656;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        transition-duration:0.4s;
+        
+        
+    }
+    
+    .icon{
+        transform:scale(3);
+        box-sizing: border-box;
+        padding-top:20px;
+        padding-bottom:20px;
+        color: rgba(182,213,111,0.8);
+    }
+    
+    .fea_head{
+        margin:10px 0;
+        margin-top:50px;
+        font-size: 18px;
+        text-transform: uppercase;
+        
+    }
+    
+    .fea_text{
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    
+    .grid-item:hover{
+        transform:scale(1.2) translateY(-7px);
+        box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+    }
+    
+    
+    .main_forms{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: sans-serif;
+        height:100vh;
+        margin:-20px 0 50px;
+    }
+    
+    form{
+        background-color:#FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 50px;
+        height:100%;
+        text-align:center;
+        
+    }
+    
+
+    
+    input{
+        background-color:#eee;
+        border:none;
+        padding:12px 15px;
+        margin:8px 0;
+        width:100%;
+    }
+    
+    
+    .container{
+        background-color: #fff;
+        border-radius:10px;
+        box-shadow:0 14px 28px rgba(0,0,0,0.25), 
+            0 10px 10px rgba(0,0,0,0.22);
+        position:relative;
+        overflow: hidden;
+        width:768px;
+        max-width:100%;
+        min-height:480px;
+        
+    }
+    
+    .form-container{
+        position:absolute;
+        top: 0;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+       
+}
+    
+    .sign-in-container{
+        left:0;
+        width:50%;
+/*        opacity:0;*/
+        z-index:2;
+    }
+    
+     .sign-up-container{
+        left:0;
+        width:50%;
+        opacity:0;
+        z-index:1;
+    }
+    
+    
+    .social-container {
+        margin:20px 0;
+    }
+    
+    
+    .social-container a{
+        border: 1px solid #DDDDDD;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items:center;
+        margin:0 5px;
+        height:40px;
+        width:40px;
+        
+        
+    }
+    
+     button{
+        border-radius: 20px;
+        border: 1px solid #FF4B2B;
+        background-color: #FF4B2B;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+        
+    }
+    
+    button:active {
+        transform: scale(0.95);
+    }
+    
+    button:focus {
+        outline: none;
+    }
+    
+    button.ghost {
+        background-color: transparent;
+        border-color: #FFFFFF;
+    }
+    
+    
+    .overlay{
+        background: #FF416C;
+        background: linear-gradient(to right,#FF4B2B, #FF416C);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 0;
+        color:#FFFFFF;
+        position:relative;
+        left:-100%;
+        height:100%;
+        width:200%;
+        transform: translateX(0);
+        transition:transform 0.6s ease-in-out;
+    }
+    
+    .overlay-panel{
+        position:absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding:0 40px;
+        text-align: center;
+        top:0;
+        height:100%;
+        width:50%;
+        transform:translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
+    
+    .overlay-container{
+        position:absolute;
+        top:0;
+        left:50%;
+        width:50%;
+        height:100%;
+        overflow:hidden;
+        transition: transform 0.6s ease-in-out;
+        z-index:100;
+    }
+    
+    .overlay-left{
+        transform: translateX(-20%);
+    }
+    
+    .overlay-right{
+        right: 0;
+        transform: translateX(0);
+    }
+    
+    .container.right-panel-active .overlay{
+        transform:translate(50%);
+    }
+    .container.right-panel-active .overlay-container{
+        transform: translateX(-100%);
+    }
+    
+    
+    
+    .container.right-panel-active .sign-in-container{
+        transform: translateX(100%);
+        
+    }
+    
+    .container.right-panel-active .sign-up-container{
+        transform: translateX(100%);
+        opacity:1;
+        z-index:5;
+        animation:show 0.6s;
+        
+        
+    }
+    
+    @keyframes show{
+        0%,49.99%{
+            opacity:0;
+            z-index:1;
+        }
+        
+        50%,100%{
+            opacity:1;
+            z-index: 5;
+        }
+    }
+    
+   .container.right-panel-active .overlay-left{
+        transform: translateX(0);
+    }
+   .container.right-panel-active .overlay-right{
+        transform: translateX(20%);
+    }
+      
+    footer{
+        background-color: #333;
+        padding:50px;
+        font-size:80%;
+    }
+    
+    .footer-nav{
+        list-style: none;
+        float:left;
+    }
+    
+    .social-links{
+        list-style: none;
+        float:right;
+    }
+    
+    .footer-nav li,
+    .social-links li{
+        display:inline-block;
+        margin-right:20px;
+        
+    }
+    
+    .footer-nav li:last-child,
+    .social-link li:last-child{
+        margin-right:0;
+        
+    }
+    
+    footer p{
+        color:#888;
+        text-align: center;
+        margin-top:60px;
+    }
+    
+    
+</style>
+
+<script src="https://kit.fontawesome.com/66b9bf3cf6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<section class="hero_main">
+    <div class="hero-text-box">
+        <h1>SAY HI TO NATURE.<br> WHICH IS BEYOND SCIENCE</h1>
+        <a href="#" class="btn btn-take">Take Tour</a>
+        <a href="#" class="btn btn-more">Show me more!</a>
+    </div>
+    
+    <div class="topnav" id="myTopnav">
+  <a href="#" class="active"><img src="resources\logo_white.png" alt="logo" class="img_logo"></a>
+  <a href="#" class="about">ABOUT</a>
+  <a href="#" class="contact">CONTACT</a>
+  <a href="#" class="globe">GLOBE</a>
+  
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+</section>
+ 
+
+
+ <section class="section_globe">
+         <div class="row">
+         <div class="main_head"> 
+         <h2 class="globe_head">EXCITING EXPERIANCE FOR PEOPLE</h2> 
+          </div>
+         </div>
+         <div class="row">
+            <div class="col_1_of_2">
+              <div class="left_para"> 
+               <h3 class="sub_head">Your experiance with NATOURS</h3>
+                
+             
+            <p class="para">
+                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut odio veritatis, nobis laboriosam temporibus reiciendis deleniti, suscipit corrupti aliquam error, non eligendi dolores accusamus eos porro architecto enim quas delectus.
+            </p>
+            <h3 class="sub_head">Experiance you never had before</h3>
+                
+             
+            <p class="para">
+                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut odio veritatis, nobis laboriosam temporibus reiciendis deleniti, suscipit corrupti aliquam error, non eligendi dolores accusamus eos porro architecto enim quas delectus.
+            </p>
+            
+            <a href="" class="btn btn-anchor">Learn more!</a>
+            </div>
+            </div>
+             <div class="col_1_of_2">
+                 <div class="composition">
+                     <img src="vendores/images/h.jpg" alt="img1" class="composition_photo composition_photo_1">
+                     <img src="vendores/images/h.jpg" alt="img2" 
+                     class="composition_photo composition_photo_2">
+                     <img src="vendores/images/h.jpg" alt="img3"
+                     class="composition_photo composition_photo_3">
+                  
+                 </div>
+             </div>
+            
+            
+            
+         </div>
+         
+     
+</section>
+
+<section class="section_features"> 
+  <div class="inner_fea">
+      <div class="grid-container">
+         <div class="grid-item grid-item-1">
+           <div class="feature-box"> 
+              <i class="fa fa-globe icon"></i>
+              <h3 class="fea_head"> Share with world</h3>
+              <p class="fea-text"> 
+                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut odio veritatis, nobis laboriosam temporibus reiciendis deleniti, suscipit corrupti aliquam error, non eligendi dolores accusamus eos porro architecto enim quas delectus.
+              
+              </p>
+           </div>
+         </div>
+         <div class="grid-item grid-item-2">
+             <div class="feature-box"> 
+               <i class="fa fa-compass travel icon"></i>
+               <h3 class="fea_head"> Navigate to world</h3>
+               <p class="fea-text"> 
+                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut odio veritatis, nobis laboriosam temporibus reiciendis deleniti, suscipit corrupti aliquam error, non eligendi dolores accusamus eos porro architecto enim quas delectus.
+              
+              </p>
+           </div>
+        </div>
+         <div class="grid-item grid-item-3">
+             <div class="feature-box"> 
+               <i class="far fa-map-o icon" aria-hidden="true"></i>
+               <h3 class="fea_head"> Routes you never took</h3>
+               <p class="fea-text"> 
+                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut odio veritatis, nobis laboriosam temporibus reiciendis deleniti, suscipit corrupti aliquam error, non eligendi dolores accusamus eos porro architecto enim quas delectus.
+              
+               </p>
+           </div></div>
+         <div class="grid-item grid-item-4">
+             <div class="feature-box"> 
+               <i class="fa fa-heart-o icon"></i>
+               <h3 class="fea_head">Live life</h3>
+               <p class="fea-text"> 
+                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut odio veritatis, nobis laboriosam temporibus reiciendis deleniti, suscipit corrupti aliquam error, non eligendi dolores accusamus eos porro architecto enim quas delectus.
+              
+               </p>
+           </div>
+        </div>
+      </div>
+    
+   </div>
+</section>
+
+<section class="section_forms">
+    <div class="main_forms">
+        <div class="container" id="container">
+ <div class="form-container sign-up-container">
+                 <form action="#">
+                     <h1>Create Account</h1>
+                     <div class="social-container">
+                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+                     </div>
+                     <span>or use your email for registration</span>
+                     <input type="text" placeholder="Name" />
+                     <input type="email" placeholder="Email" />
+                     <input type="password" placeholder="Password" />
+                     <button> Sign Up</button>
+                 </form> 
+    </div>
+     <div class="form-container sign-in-container">
+            <form action="#">
+                      <h1>Sign in</h1>
+                      <div class="social-container">
+                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="social"><i class="fab fa-instagram"></i></a>
+                     </div>
+                     <span>or use your account</span>
+                     <input type="email" placeholder="Email" />
+                     <input type="password" placeholder="Password" />
+                     <a href="#">Forgot your password</a>
+                     <button>Sign In</button>
+                </form>
+        </div>
+             <div class="overlay-container">
+                 <div class="overlay">
+                     <div class="overlay-panel overlay-left">
+                         <h1>Welcome Back!</h1>
+                         <p>To keep connected with us please login with your personal info</p>
+                         <button class="ghost" id="signIn">Sign In</button>
+                     </div>
+                     <div class="overlay-panel overlay-right">
+                         <h1>Hello, Friend!</h1>
+                         <p>Enter your personal details and start your journey with us!</p>
+                         <button class="ghost" id="signUp">Sign Up</button>
+                     </div>
+                 </div>
+             </div>
+             
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="row">
+         <div class="col_1_of_2 col-left">
+             <ul class="footer-nav">
+                 <li><a href="">About Us</a></li>
+                 <li><a href="">Blog</a></li>
+                 <li><a href="">Contact Us</a></li>
+                 <li><a href="">Android App</a></li>
+                 <li><a href="">IOS app</a></li>
+             </ul>
+         </div>
+         <div class="col_1_of_2 col-right">
+             <ul class="social-links">
+                 <li><a href=" "><i class="fa fa-facebook-official"></i></a></li>
+                 <li><a href=" "><i class="fa fa-twitter"></i></a></li>
+                 <li><a href=" "><i class="fa fa-google-plus"></i></a></li>
+                 <li><a href=" "><i class="fa fa-instagram"></i></a></li>
+                 
+             </ul>
+         </div>
+    </div>
+    <div class="row"> 
+         <p> This webpage was created by Hiral Choksi.NO copyrights here <br>
+         This webpage is for you!So go and do whatever you want with is and have fun.
+         </p>
+         <p>
+             Build with <i class="fa fa-heart-o "></i> in the beatiful city of AHMEDABAD,DECEMBER 2022
+         </p>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+      console.log(x)
+  } 
+    else {
+          x.className = "topnav";
+          console.log(x)
+    
+  }
+}
+    
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+    
+    signInButton.addEventListener('click',() =>{
+        container.classList.remove("right-panel-active");
+        
+    });
+    
+    signUpButton.addEventListener('click',()=>{
+        container.classList.add("right-panel-active");
+        
+    });
+    
+</script>
+
+</body>
+</html>
